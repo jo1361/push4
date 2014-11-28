@@ -24,6 +24,7 @@
 
 	<!-- <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.1.1" /> -->
 	<gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
+	  <gap:plugin name="org.apache.cordova.device" />
     <icon src="icon.png" />
 
     <access origin="*"/>

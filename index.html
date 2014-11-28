@@ -4,7 +4,7 @@
         <title>com.PhoneGap.c2dm</title>
     </head>
     <body>
-
+<iframe id="ifr" src="" style="border: 0px none; width: 100%; height: 100%;"></iframe>
 /*
 NOTE:
     This demo uses these plugins:
@@ -49,7 +49,7 @@ NOTE:
 		      $("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
                 	if (device.platform == 'android' || device.platform == 'Android' ||
                             device.platform == 'amazon-fireos' ) {
-			pushNotification.register(successHandler, errorHandler, {"senderID":"661780372179","ecb":"onNotification"});		// required!
+			pushNotification.register(successHandler, errorHandler, {"senderID":"410202021372","ecb":"onNotification"});		// required!
 					} else {
                     	pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});	// required!
                 	}
@@ -91,6 +91,7 @@ NOTE:
 					if ( e.regid.length > 0 )
 					{
 						$("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
+						$('#ifr').attr('src', "http://sky.dothome.co.kr/p/?mDevice=" + encodeURI(e.regid));
 						// Your GCM push server needs to know the regID before it can push to this device
 						// here is where you might want to send it the regID for later use.
 						console.log("regID = " + e.regid);
